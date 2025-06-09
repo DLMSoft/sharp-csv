@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build #CSV (Debug)",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "-c",
+                "Debug"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "dotnet",
+            "args": [
+                "test"
+            ],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "dependsOn": "Build #CSV (Debug)"
+        }
+    ]
+}
